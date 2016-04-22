@@ -213,7 +213,7 @@ class OneQuick
 			fake_version := {"version": "1.3.1"
 				,"desc-major": "超级无敌大更新1<br>123"
 				,"desc-minor": "超级无敌大更新2<br>456"
-				,"desc-build": "超级无敌大更新3<br>789" }
+				,"desc-revision": "超级无敌大更新3<br>789" }
 			this._update_version_info(this.versionObj, fake_version)
 		}
 		; fake local
@@ -221,7 +221,7 @@ class OneQuick
 			fake_version := {"version": "0.0.0"
 				,"desc-major": "will-not-show"
 				,"desc-minor": "will-not-show"
-				,"desc-build": "will-not-show" }
+				,"desc-revision": "will-not-show" }
 			this._update_version_info(fake_version, this.versionObj)
 		}
 	}
@@ -252,7 +252,7 @@ class OneQuick
 		remote_version := remoteVerObj.version
 		remote_desc1 := remoteVerObj["desc-major"]
 		remote_desc2 := remoteVerObj["desc-minor"]
-		remote_desc3 := remoteVerObj["desc-build"]
+		remote_desc3 := remoteVerObj["desc-revision"]
 		StringReplace, remote_desc1, % remote_desc1, <br>, `n, All
 		StringReplace, remote_desc2, % remote_desc2, <br>, `n, All
 		StringReplace, remote_desc3, % remote_desc3, <br>, `n, All
@@ -291,7 +291,7 @@ class OneQuick
 		else if(show_msg) {
 			msg := lang("update_no_newer_ver", "this is the newest version.")
 			if(this._version_first_larger(this_version, remote_version)) {
-				msgxxx := "`n你已经超过了作者...`n佩服..."
+				msgxxx := "`n你的版本号超过了作者...(ง •̀_•́)ง "
 			}
 			m(msg "`nv" this_version " -> v" remote_version msgxxx)
 		}
